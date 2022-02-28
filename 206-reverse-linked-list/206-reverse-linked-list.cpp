@@ -10,6 +10,8 @@
  */
 class Solution {
 public:
+    // Non recursive method
+    /*
     ListNode* reverseList(ListNode* head)
     {
       ListNode *p=NULL,*q=head,*r;
@@ -20,11 +22,32 @@ public:
             q->next=p;
             p=q;
             q=r;
-            if(q==NULL) break;
         }
         return p;
-        
-        
-        
     }
+    
+    */
+    
+    // recursive method
+    ListNode* reverseList(ListNode* head)
+    {
+     ListNode *p;
+     if(head==NULL) return head;
+     p=head;
+     head=recursion(head);
+     p->next=NULL;
+     return head;
+     }
+     ListNode *recursion(ListNode* head)
+     {
+     ListNode *current,*next;
+     current=head;
+     next=current->next;
+     if(next==NULL) return current;
+     head=recursion(next);
+     next->next=current;  //reversing current,next node
+     return head;
+     }
+    
+    
 };
