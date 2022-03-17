@@ -19,7 +19,6 @@ public:
             {
             if(*i==node)
             {
-               // cout<<"true"<<endl;
                 return 1;
             }
             }
@@ -27,7 +26,7 @@ public:
             node=node->next;
             
         }
-        //cout<<"false"<<endl;
+        
         return 0;
         
     }
