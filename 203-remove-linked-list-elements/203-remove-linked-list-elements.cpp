@@ -15,7 +15,6 @@ public:
         while(head!=NULL && head->val==val)
         {
             node=head->next;
-            delete head;
             head=node;
         }
         if(head==NULL || head->next==NULL) return head;
@@ -26,7 +25,6 @@ public:
         {
             if(curr->val==val)
             {
-                delete curr;
                 curr=next;
                 if(next) next=next->next;
                 prev->next=curr;
