@@ -15,7 +15,7 @@ public:
         ListNode *node,*prev,*curr,*next,*node1;
         int j;
         node=head;
-        if(left!=1) for(j=left; --j; node=node->next) node1=node; 
+        if(left!=1) for(j=left; --j; node=node->next) if(j==1) node1=node; 
     
         for(j=right-left,prev=node,curr=node->next, next=NULL; j--; )
         {
