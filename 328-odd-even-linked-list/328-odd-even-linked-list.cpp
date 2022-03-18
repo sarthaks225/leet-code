@@ -13,10 +13,9 @@ public:
     ListNode* oddEvenList(ListNode* head) {
         if(head==NULL) return NULL;
         if(head->next==NULL) return head;
-        ListNode *o_node,*e_node,*dp,*se;
+        ListNode *o_node,*e_node,*se;
         o_node=head;
         e_node=se=head->next;
-      dp=e_node->next;  
         while(e_node && e_node->next!=NULL)
         {
             o_node->next=e_node->next; ;
