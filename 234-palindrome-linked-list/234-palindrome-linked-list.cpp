@@ -55,7 +55,6 @@ public:
             node=node->next;
         }
         
-        return true;
-        
+        return true;    
     }
 };
