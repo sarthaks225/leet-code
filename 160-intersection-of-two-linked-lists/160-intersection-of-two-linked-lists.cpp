@@ -10,7 +10,7 @@ class Solution {
 public:
     
     ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
-        /*
+        
         map<ListNode *,int> tree;
         ListNode *nodeA,*nodeB;
         nodeA=headA;
@@ -30,7 +30,7 @@ public:
         if(nodeB==NULL) return NULL;
         return (*i).first;
     }
-    */
+    /*
     
     ListNode *nodeA,*nodeB;
     nodeA=headA;
@@ -45,4 +45,5 @@ public:
     }
     return NULL;
  }
+ */
 };
