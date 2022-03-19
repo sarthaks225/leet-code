@@ -8,7 +8,9 @@
  */
 class Solution {
 public:
+    
     ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
+        /*
         map<ListNode *,int> tree;
         ListNode *nodeA,*nodeB;
         nodeA=headA;
@@ -28,4 +30,19 @@ public:
         if(nodeB==NULL) return NULL;
         return (*i).first;
     }
+    */
+    
+    ListNode *nodeA,*nodeB;
+    nodeA=headA;
+    nodeB=headB;
+    while(nodeA || nodeB)
+    {
+        if(nodeA==nodeB) return nodeA;
+        if(nodeA==NULL) nodeA=headA;
+        else nodeA=nodeA->next;
+        if(nodeB==NULL) nodeB=headB;
+        else nodeB=nodeB->next;
+    }
+    return NULL;
+ }
 };
