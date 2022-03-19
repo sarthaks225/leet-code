@@ -16,10 +16,8 @@ public:
         ListNode *begin,*end,*endPrev;
         begin=head;
         int i,j;
-        for(i=0; begin!=NULL; begin=begin->next)
-        {
-         ++i;   
-        }
+        for(i=0; begin!=NULL; begin=begin->next) ++i;   
+        
         
         if(i<k)
         {
@@ -27,16 +25,12 @@ public:
         if(j==0) k=i;
         else k=j;
         }
-        
-        cout<<"k"<<k<<endl;
+    
         begin=head;
         while(k--)
         {
             endPrev=begin;
             end=begin->next;
-            cout<<"ep"<<endPrev->val<<endl;
-            cout<<"begin"<<begin->val<<endl;
-            cout<<"end"<<end->val<<endl;
             while(end->next!=NULL)
             {
                 endPrev=end;
