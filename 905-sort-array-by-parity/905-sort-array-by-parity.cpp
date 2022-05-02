@@ -1,7 +1,7 @@
 class Solution {
 public:
     vector<int> sortArrayByParity(vector<int>& nums) {
-        if(nums.size()==0 || nums.size()==1) return nums;
+   
         vector<int>::iterator i1,i2;
         i1=nums.begin();
         i2=i1+1;
