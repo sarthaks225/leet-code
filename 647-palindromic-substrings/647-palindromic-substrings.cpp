@@ -4,6 +4,7 @@ public:
         int count;
         int length;
         length=s.length();
+        
         count=length;
         string::iterator i1,i2,i3,end;
         end=s.end();
