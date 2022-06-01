@@ -3,14 +3,14 @@ class Solution {
         
         int prevSum=0;
         int numsLength=nums.length;
-        int[] sol=new int[numsLength];
+        
         
         for(int i=0; i<numsLength; ++i)
         {
-            prevSum=sol[i]=nums[i]+prevSum;
+            prevSum=nums[i]=nums[i]+prevSum;
             
         }
         
-        return sol;
+        return nums;
     }
 }
