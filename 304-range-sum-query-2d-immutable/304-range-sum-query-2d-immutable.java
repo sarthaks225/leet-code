@@ -11,20 +11,18 @@ class NumMatrix {
         
         int sum;
         int i,j;
-        sum=0; i=row1; // i<=row; ++i 
-        while(true)
+        sum=0; i=row1;
+        while(i<=row2)
         {
             for(j=col1 ; j<=col2 ; ++j)
             {
                 sum+=matrix[i][j];
-                //System.out.println("[M] "+i+j+": "+matrix[i][j]);
+                
             }
             ++i;
                 
-          if(i>row2) break;
-            
         }
-        //System.out.println("............");
+       
         return sum;
     }
 }
