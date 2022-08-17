@@ -9,10 +9,7 @@ class Solution {
         {
             morseString="";
             j=word.length();
-            for(i=0; i<j; ++i)
-            {
-                morseString+=alphabet[word.charAt(i)-'a'];
-            }
+            for(i=0; i<j; ++i) morseString+=alphabet[word.charAt(i)-'a'];
             set.add(morseString);
         }
         return set.size();
