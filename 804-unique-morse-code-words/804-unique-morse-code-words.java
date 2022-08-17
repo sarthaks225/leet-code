@@ -3,7 +3,7 @@ class Solution {
         String alphabet[]={".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."};
         
        Set<String> set=new HashSet<>();
-        int i,j;
+        int i;
         String morseString;
         for(String word: words)
         {
