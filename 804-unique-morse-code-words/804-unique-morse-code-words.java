@@ -3,12 +3,13 @@ class Solution {
         String alphabet[]={".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."};
         
        Set<String> set=new HashSet<>();
-        int i;
+        int i,j;
         String morseString;
         for(String word: words)
         {
             morseString="";
-            for(i=0; i<word.length(); ++i)
+            j=word.length();
+            for(i=0; i<j; ++i)
             {
                 morseString+=alphabet[word.charAt(i)-'a'];
             }
