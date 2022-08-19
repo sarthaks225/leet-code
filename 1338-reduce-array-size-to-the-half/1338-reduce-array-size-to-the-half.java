@@ -19,25 +19,14 @@ class Solution {
         });
         
         int lengthOfArr=arr.length/2;
-        System.out.println(lengthOfArr);
         int out=0;
-        int f,j;
+        int j;
         j=0;
-        while(!pq.isEmpty())
+        while(lengthOfArr>j)
         {
-            f=pq.poll();
             out+=1;
-            j+=f;
-           
-            System.out.println(f);
-            if(lengthOfArr<=j) 
-            {
-                break;
-                
-            }
-        
+            j+=pq.poll();;
         }
-        if(out==0) return 1;
         return out;
     }
 }
