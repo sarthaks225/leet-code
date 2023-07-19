@@ -7,7 +7,7 @@ public:
             
             for(int j=i+1; j<intervals.size(); ++j)
             {
-                if(intervals[i][0]!=-1 && intervals[j][0]!=-1)
+                if(intervals[j][0]!=-1 &&intervals[i][0]!=-1)
                 {
                     
                     if(intervals[i][1]>=intervals[j][0] && intervals[i][0]<=intervals[j][0])
