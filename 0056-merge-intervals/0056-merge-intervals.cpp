@@ -11,9 +11,7 @@ public:
                 {
                     
                     if(intervals[i][1]>=intervals[j][0] && intervals[i][0]<=intervals[j][0])
-                    {
-                        cout<<"****"<<intervals[i][0]<<" "<<intervals[i][1]<<endl;
-                        cout<<intervals[j][0]<<" "<<intervals[j][1]<<endl;
+                    { 
                         
                         intervals[i][1]=intervals[i][1]>intervals[j][1]?intervals[i][1]:intervals[j][1];
                         
@@ -23,8 +21,6 @@ public:
                     }
                     else if(intervals[i][0]>=intervals[j][0] && intervals[i][0]<=intervals[j][1])
                     {
-                        cout<<"****"<<intervals[i][0]<<" "<<intervals[i][1]<<endl;
-                        cout<<intervals[j][0]<<" "<<intervals[j][1]<<endl;
                          intervals[i][0]=intervals[j][0];
                          intervals[i][1]=intervals[i][1]>intervals[j][1]?intervals[i][1]:intervals[j][1];
                         intervals[j][0]=-1;
