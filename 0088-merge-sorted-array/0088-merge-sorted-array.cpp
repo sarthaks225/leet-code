@@ -11,14 +11,11 @@ public:
         {
             if(*i1<*i2)
             {
-                cout<<*i1<<" ";
                 result.push_back(*i1);
                 ++i1;
                 --m;
             }
             else{
-                cout<<*i2<<" ";
-
                 result.push_back(*i2);
                 ++i2;
                 --n;
@@ -32,16 +29,12 @@ public:
         }
         while(m)
         {
-                cout<<*i1<<" ";
-
             result.push_back(*i1);
             i1++;
             --m;
         }
-        cout<<"///"<<endl;
         for(i1=nums1.begin(), i2=result.begin(); i2!=result.end(); ++i2,++i1)
         {
-            cout<<*i2;
             *i1=*i2;
         }
         
