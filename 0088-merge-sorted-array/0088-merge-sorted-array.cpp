@@ -10,7 +10,6 @@ public:
         itr3=nums2.end()-1;
         while(itr3>=nums2.begin() && itr2>=nums1.begin())
         {
-            cout<<" itr2:"<<*itr2<<"  itr3:"<<*itr3<<endl;
             if(*itr2<=*itr3)
             {
                 *itr1=*itr3;
