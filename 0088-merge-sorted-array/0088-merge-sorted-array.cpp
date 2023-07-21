@@ -2,6 +2,17 @@ class Solution {
 public:
     void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
         
+        
+        // time comp O(n)+O((m+n)log(m+n))
+        for(int i=m,j=0; j<n; ++j,++i)
+        {
+            nums1[i]=nums2[j];
+        }
+        sort(nums1.begin(),nums1.end());
+        
+        /*
+            //*** time comp O(max(m,n)) + O(m+n)
+            //**** space O(m+n)
         vector<int>::iterator i1,i2;
         vector<int> result;
         
@@ -38,7 +49,7 @@ public:
             *i1=*i2;
         }
         
-        
+    */      
         
         
     }
