@@ -10,14 +10,11 @@ public:
              
             i=nums[i];
             j=nums[nums[j]];
-             cout<<nums[j]<<" "<<nums[i]<<" ,";
             if(i==j) break;
             
         }
-        cout<<"sdf";
         for(i=nums[0]; i!=j; i=nums[i])
         {
-            cout<<nums[j]<<" "<<nums[i];
             j=nums[j];
         }
         return j;
