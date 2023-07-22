@@ -6,8 +6,6 @@ public:
         int j=i; 
         while(1)
         {
-           
-             
             i=nums[i];
             j=nums[nums[j]];
             if(i==j) break;
