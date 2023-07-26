@@ -1,7 +1,7 @@
 class Solution {
 public:
     int majorityElement(vector<int>& nums) {
-       
+            // time comp O(2N) spc comp O(1)
         vector<int>::iterator i1;
         int assumedMajority;
         int count=0;
@@ -16,6 +16,7 @@ public:
             else ++count;
         }
         
+        if(count==0) return -1;
         for(i1=nums.begin(),count=0; i1<nums.end(); ++i1)
         {
             if(assumedMajority==*i1) ++count;
