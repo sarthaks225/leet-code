@@ -3,15 +3,14 @@ public:
     vector<int> majorityElement(vector<int>& nums) {
         
         map<int,int> mp;
-        
         vector<int>::iterator i1;
         vector<int> result;
-        int req=nums.size()/3;
+        int req=nums.size()/3+1;
         int freq;
         for(i1=nums.begin(); i1<nums.end(); ++i1)
         {
             freq=++mp[*i1];
-            if( freq>req && ( result.size()==0 || *i1!=result[0] ) )
+            if( freq==req )
             {
                 result.push_back(*i1);
                 if(result.size()==2) break;
