@@ -20,7 +20,6 @@ public:
             }
         }
         double ans=p*q;
-        cout<<ans;
         if(n<0) ans=1/ans;
         return ans;
     }
