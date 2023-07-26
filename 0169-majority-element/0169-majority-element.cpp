@@ -5,10 +5,11 @@ public:
         unordered_map<int,int> mp;
         vector<int>::iterator i1;
         int ep=nums.size()/2;
+        int second;
         for(i1=nums.begin(); i1<nums.end(); ++i1)
         {
-            mp[*i1]++;
-            if(mp[*i1]>ep) return *i1;
+            second=++mp[*i1];
+            if(second>ep) return *i1;
         }
         
         return -1;
