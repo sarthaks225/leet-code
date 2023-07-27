@@ -4,18 +4,13 @@ public:
     int comb(int n,int r)
     {
         long result=1;
-      
         for(int i=1; i<=r ; ++i)
         {
             result=result*(n-r+i)/i;
-           // cout<<result<<"  ";
         }
-        
-       
         return result;
     }
     int uniquePaths(int m, int n) {
-        cout<<m+n-2<<"  "<<m-1<<endl;
         return comb(m+n-2,m-1);
     }
     
