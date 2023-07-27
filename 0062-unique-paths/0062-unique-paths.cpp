@@ -8,7 +8,7 @@ public:
         {
             result=result*(n-r+i)/i;
         }
-        return result;
+        return (int)result;
     }
     int uniquePaths(int m, int n) {
         return comb(m+n-2,m-1);
