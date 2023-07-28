@@ -13,15 +13,7 @@ public:
         
         int m=obstacleGrid.size();
         int n=obstacleGrid[0].size();
-        vector<vector<int>> mp;
-        mp.resize(m);
-        for(vector<vector<int>>::iterator i=mp.begin(); i<mp.end(); ++i)
-        {
-            for(int j=0; j<n; ++j)
-            {
-                (*i).push_back(-1);
-            }
-        }
+        vector<vector<int>> mp(m,vector<int>(n,-1)); 
         
         return rec(0,0,m-1,n-1,obstacleGrid,mp);
         
