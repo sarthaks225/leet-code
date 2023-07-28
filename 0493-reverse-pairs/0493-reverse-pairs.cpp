@@ -1,7 +1,7 @@
 class Solution {
 public:
     
-    int reversePairs(int l1, int h1, int l2, int h2, vector<int> &nums )
+    int reversePairsCount(int l1, int h1, int l2, int h2, vector<int> &nums )
     {
         int cnt=0;
         while(l1<=h1 && l2<=h2)
@@ -19,7 +19,7 @@ public:
         
         return cnt;
     }
-    
+    /*
     void sortFunction(int l1,int h1, int l2, int h2, vector<int> &nums)
     {
         
@@ -41,7 +41,7 @@ public:
             nums[i]=tmp[j];
         }
     }
-
+    */
     
     int rec(int low, int mid, int high, vector<int> &nums)
     {
@@ -52,8 +52,9 @@ public:
         cnt+=rec(low,(low+mid)/2,mid, nums);
         cnt+=rec(mid+1,(mid+1+high)/2,high, nums);
         
-        cnt+=reversePairs(low,mid, mid+1,high, nums);
+        cnt+=reversePairsCount(low,mid, mid+1,high, nums);
         
+        //sortFunction(low, mid, mid+1, high , nums);
         sort(nums.begin()+low,nums.begin()+high+1);
         return cnt;   
     }
@@ -61,9 +62,8 @@ public:
     
     int reversePairs(vector<int>& nums) {
        
-return        rec(0,(nums.size()-1)/2,nums.size()-1,nums);
-        for(auto i:nums) cout<<i<<"  ";
-
+    return  rec(0,(nums.size()-1)/2,nums.size()-1,nums);
+     
         
     }
 };
