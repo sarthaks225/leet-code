@@ -54,14 +54,16 @@ public:
         
         cnt+=reversePairs(low,mid, mid+1,high, nums);
         
-        sortFunction(low, mid, mid+1, high , nums);
+        sort(nums.begin()+low,nums.begin()+high+1);
         return cnt;   
     }
     
     
     int reversePairs(vector<int>& nums) {
        
-        return rec(0,(nums.size()-1)/2,nums.size()-1,nums);
+return        rec(0,(nums.size()-1)/2,nums.size()-1,nums);
+        for(auto i:nums) cout<<i<<"  ";
+
         
     }
 };
