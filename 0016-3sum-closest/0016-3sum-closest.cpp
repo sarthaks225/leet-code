@@ -21,14 +21,8 @@ public:
                     prevComparator=comparator;
                 }
                     
-               if(target>currSum)
-               {
-                   ++j;  
-               }
-               else if(target<currSum)
-               {
-                    --k;
-               }                
+               if(target>currSum) ++j;
+               else if(target<currSum) --k;
             }
            if(comparator==0) break;
         }
