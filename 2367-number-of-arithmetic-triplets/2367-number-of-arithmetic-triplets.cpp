@@ -2,14 +2,11 @@ class Solution {
 public:
     int arithmeticTriplets(vector<int>& nums, int diff) {
         // time comp O(nLog(n)) spc com O(n)
-       set<int> s(nums.begin(), nums.end());
-        set<int>::iterator sItr;
-        vector<int>::iterator itr;
+       unordered_set<int> s(nums.begin(), nums.end());
         int count=0;
-        for(itr=nums.begin(); itr<nums.end()-2; ++itr)
+        for(int num: nums)
         {
-            sItr=s.find(*itr+diff);
-            if(sItr!=s.end() && s.find(*sItr+diff)!=s.end()) ++count;
+            if(s.count(num+diff)!=0 && s.count(num+2*diff)!=0) ++count;
         }
         
         return count;
