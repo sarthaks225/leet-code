@@ -8,16 +8,7 @@ public:
             if(i!=0 && nums[i-1]==nums[i]) continue;
             for(int j=i+1,k=nums.size()-1; j<k;)
             {
-                if(i+1!=j && nums[j-1]==nums[j] )
-                {
-                    ++j;
-                    continue;
-                }
-                if(k!=nums.size()-1 && nums[k+1]==nums[k])
-                {
-                    --k;
-                    continue;
-                }
+               
                 if(nums[i]+nums[j]+nums[k]>0)
                 {
                     
@@ -32,6 +23,10 @@ public:
                     result.push_back({nums[i],nums[j],nums[k]});
                     ++j;
                     --k;
+                    
+                    while(j<k && nums[j-1]==nums[j]) ++j;
+                    while(j<k && nums[k+1]==nums[k]) --k;
+                    
                 }
                 
                 
