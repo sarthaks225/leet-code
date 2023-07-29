@@ -1,23 +1,24 @@
 class Solution {
 public:
     int arithmeticTriplets(vector<int>& nums, int diff) {
-        int count,find,i,j,k;
+        int count,find;
+        vector<int>::iterator i,j,k;
         count=0;
-        for(i=0; i<nums.size()-2; ++i)
+        for(i=nums.begin(); i<nums.end()-2; ++i)
         {
             
-            find=diff+nums[i];
+            find=diff+*i;
             j=i+1;
-            while(j<nums.size()-1 && nums[j]<find) ++j;
+            while(j<nums.end()-1 && *j<find) ++j;
            
-            if(j<nums.size()-1 && find==nums[j])
+            if(j<nums.end()-1 && find==*j)
             {
                 k=j+1;
                 find=diff+find;
                 
-                while(k<nums.size() && nums[k]<find) ++k;
+                while(k<nums.end() && *k<find) ++k;
                 
-                if(k<nums.size() && nums[k]==find) ++count;
+                if(k<nums.end() && *k==find) ++count;
 
             }
            
