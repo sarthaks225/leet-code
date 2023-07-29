@@ -17,14 +17,14 @@ public:
                 if(comparator<prevComparator)
                 {
                     sum=currSum;
-                    if(comparator==0) break;
+                    if(comparator==0) return sum;
                     prevComparator=comparator;
                 }
                     
                if(target>currSum) ++j;
                else if(target<currSum) --k;
             }
-           if(comparator==0) break;
+
         }
         
         return sum;
