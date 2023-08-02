@@ -19,7 +19,7 @@ public:
                     sum+=nums[j];
                     sum+=nums[e];
                     sum+=nums[f];
-                    //cout<<sum<<" "<<nums[i]<<" "<<" "<<nums[j]<<" "<<" "<<nums[e]<<" "<<" "<<nums[f]<<endl;
+                 
                     if(sum==target) {
                         result.push_back({ nums[i], nums[j], nums[e], nums[f] });
                         e++;
