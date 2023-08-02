@@ -5,7 +5,7 @@ public:
         int n=nums.size()-1;
         int i=0;
         vector<vector<int>> result;
-        while(i<n-2)
+        while(i<n)
         {
             int j=i+1;
             while(j<n-1)
@@ -28,23 +28,20 @@ public:
                         while(nums[f+1]==nums[f] && e<f) --f;
                     } else if(sum<target)
                     {
-                        ++e;
-                        while(nums[e-1]==nums[e] && e<f) ++e;
-                        
+                        ++e;                       
                     }else if(sum>target)
                     {
                         --f;
-                        while(nums[f+1]==nums[f] && e<f) --f;
                     }
                     
                     
                 }                
                 
                 ++j;
-                while(nums[j]==nums[j-1] && j<n-1) ++j;
+                while(nums[j]==nums[j-1] && j<n) ++j;
             }
             ++i;
-            while(nums[i]==nums[i-1] && i<n-2) ++i;            
+            while(nums[i]==nums[i-1] && i<n) ++i;            
         }
         
         return result;
