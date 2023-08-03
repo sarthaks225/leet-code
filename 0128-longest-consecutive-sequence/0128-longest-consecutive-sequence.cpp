@@ -11,9 +11,9 @@ public:
         {
             if(hashSet.count(*i-1)==0)
             {
+                count=1;
                 for(int num=*i+1; hashSet.count(num)==1; ++num) ++count; 
                 result=max(result,count);
-                count=1;
             }            
         }
         
