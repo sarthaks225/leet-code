@@ -10,16 +10,12 @@ public:
         for( i=0; i<s.size(); ++i)
         {
             c=s[i];
-            if(mp.find(c)==mp.end())
+            if(mp.find(c)!=mp.end())
             {
-                mp[c]=i;
-                continue;
+                 result=max(result,i-left);
+                 left=max(left,mp[c]+1);
             }
-            result=max(result,i-left);
-            left=max(left,mp[c]+1);
             mp[c]=i;
-            
-            
         }
         result=max(result,i-left);
      return result;   
