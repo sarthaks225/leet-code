@@ -4,7 +4,7 @@ public:
     {
        for(vector<int>::iterator i=itr; i!=candidates.end(); ++i)
        {
-           if(itr!=i && itr!=candidates.begin() && *(itr-1)==*i) continue;
+           if(itr<i && *(i-1)==*i) continue;
            if(*i>target) return;
            target-=*i;
            v.push_back(*i);
