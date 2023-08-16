@@ -1,6 +1,6 @@
 class Solution {
 public:
-    void recur(set<vector<int>> &resultSet, vector<int> &v,int &target, vector<int>::iterator itr,vector<int> &candidates)
+    void recur(vector<vector<int>> &resultSet, vector<int> &v,int &target, vector<int>::iterator itr,vector<int> &candidates)
     {
        for(vector<int>::iterator i=itr; i!=candidates.end(); ++i)
        {
@@ -10,7 +10,7 @@ public:
            v.push_back(*i);
            if(target==0)
            {
-               resultSet.insert(v);
+               resultSet.push_back(v);
                v.pop_back();
            target+=*i; 
                return;
@@ -27,12 +27,11 @@ public:
     vector<vector<int>> combinationSum2(vector<int>& candidates, int target) {
         
         sort(candidates.begin(),candidates.end());
-        set<vector<int>> resultSet;
         vector<int> v;
+          vector<vector<int>> result;
+        recur(result,v,target, candidates.begin(),candidates);
         
-        recur(resultSet,v,target, candidates.begin(),candidates);
-        
-              vector<vector<int>> result(resultSet.begin(), resultSet.end());
+            
         return result;
         
     }
