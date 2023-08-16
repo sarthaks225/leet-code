@@ -1,8 +1,7 @@
 class Solution {
 public:
-    void recur(vector<vector<int>> &result, vector<int> v,int index, vector<int> &candidates, int target)
+    void recur(vector<vector<int>> &result, vector<int> &v,int index, vector<int> &candidates, int target)
     {
-     
         for(int i=index; i<candidates.size(); ++i)
         {
             target-=candidates[i];
@@ -30,7 +29,8 @@ public:
     vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
         sort(candidates.begin(),candidates.end());
         vector<vector<int>> result;
-        recur(result,{},0,candidates,target);
+        vector<int> v;
+        recur(result,v,0,candidates,target);
         return result;
     }
 };
