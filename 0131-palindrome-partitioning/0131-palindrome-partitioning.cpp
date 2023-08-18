@@ -3,11 +3,9 @@ public:
     
     bool isPalindrom(int start, int end, string &s)
     {
-        while(start<=end)
+        while(start<end)
         {
-            if(s[start]!=s[end]) return false;
-            start++;
-            end--;
+            if(s[start++]!=s[end--]) return false;
         }
         return true;
     }
@@ -24,7 +22,6 @@ public:
         {
             if(isPalindrom(index,i,s))
             {
-                //cout<<"111  ";
                 v.push_back(s.substr(index, i - index + 1));
                 recur(i+1, s, result, v);
                 v.pop_back();
