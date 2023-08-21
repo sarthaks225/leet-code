@@ -8,7 +8,7 @@ public:
     {
         
         for(int i=0; i<board.size(); ++i){
-            for(int j=0; j<board[i].size(); ++j){
+            for(int j=0; j<board.size(); ++j){
                 if(board[i][j]=='.'){
                     for(char c='1'; c<='9'; ++c){
                         if(isValid(i,j,c,board)){
