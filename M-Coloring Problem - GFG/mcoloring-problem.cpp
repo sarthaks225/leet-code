@@ -10,8 +10,7 @@ public:
     // that no two adjacent vertices of graph are coloured with same colour.
     bool graphColoring(bool graph[101][101], int m, int n) {
         // your code here
-        int color[n];
-        for(int i=0; i<n; ++i) color[i]=-1;
+        int color[n]={0};
         return recur(0,color,graph,m,n);
     }
     
@@ -25,23 +24,14 @@ public:
             
             for(; j<n; ++j)
             {
-                if(graph[node][j]==1 && color[j]==col)
-                {
-                    break;
-                }
+                if(graph[node][j]==1 && color[j]==col) break;
                 
             }
             if(j==n)
             {
                 color[node]=col;
-                if(recur(node+1, color, graph, m, n))
-                {
-                    return true;
-                }
+                if(recur(node+1, color, graph, m, n)) return true;
             }
-
-           
-            
         }
         return false;
         
