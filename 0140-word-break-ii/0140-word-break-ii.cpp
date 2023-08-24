@@ -19,6 +19,7 @@ public:
     {
         if(index==s.size())
         {
+            str.pop_back();
             result.push_back(str);
             return;
         }
@@ -32,7 +33,7 @@ public:
             {
                 str2=str;
                 str2+=word;
-                if(i<s.size()-1) str2.push_back(' ');
+                str2.push_back(' ');
                 recur(i+1,s,mp,str2,result);
                 
             }
