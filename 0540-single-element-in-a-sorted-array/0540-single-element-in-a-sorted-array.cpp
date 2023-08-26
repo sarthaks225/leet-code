@@ -19,9 +19,6 @@ public:
                 
             }
             mid=(low+high)/2;
-  
-                
-            
         }
         return nums[mid];
     }
