@@ -4,7 +4,6 @@ public:
         int low=0;
         int high=nums.size()-1;
         int mid=(low+high)/2;
-        
         while(mid!=0 && mid!=nums.size()-1)
         {
             if(mid%2==0)
