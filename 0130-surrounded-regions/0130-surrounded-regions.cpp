@@ -2,15 +2,11 @@ class Solution {
 public:
     void solve(vector<vector<char>>& board) {
         vector<vector<char>> check(board.size(), vector<char> (board[0].size(),0));
-        //cout<<"1111"<<endl;
         for(int j=0; j<board[0].size(); ++j)
         {
-                     //   cout<<j<<" "<<board[0][j];
             if(board[0][j]=='X' || check[0][j]=='1') continue;
-            //cout<<j;
             dfs(0,j,check,board);
         }
-   // cout<<"22222";
         for(int i=0; i<board.size(); ++i)
         {
             if(board[i][0]=='X' || check[i][0]=='1') continue;
@@ -32,12 +28,10 @@ public:
         {
             for(int j=0; j<board[0].size(); ++j)
             {
-                if(check[i][j]=='1') continue;
+                if(check[i][j]=='1' || board[i][j]=='X') continue;
                 board[i][j]='X';
             }
         }
-                                   
-        
     }
     
     void dfs(int i,int j, vector<vector<char>> &check, vector<vector<char>> &board)
