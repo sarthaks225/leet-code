@@ -11,6 +11,7 @@
  */
 class Solution {
 public:
+    /*
     int recur(TreeNode *node, int curr, int result)
     {
         if(node==NULL) return curr>result?curr:result;
@@ -20,8 +21,12 @@ public:
         return curr>result?curr:result;
         
     }
+    */
     int maxDepth(TreeNode* root) {
-        return recur(root,0,0);
-        
+        //return recur(root,0,0);
+        if(root==NULL) return 0;
+        int leftH=maxDepth(root->left);
+        int rightH=maxDepth(root->right);
+        return 1 + (leftH > rightH ? leftH : rightH);
     }
 };
