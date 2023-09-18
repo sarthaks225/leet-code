@@ -15,7 +15,6 @@ public:
     {
         if(node==NULL) return curr>result?curr:result;
         ++curr;
-        //result=curr>result?curr:result;
         result=recur(node->left,curr,result);
         result=recur(node->right,curr,result);
         return curr>result?curr:result;
