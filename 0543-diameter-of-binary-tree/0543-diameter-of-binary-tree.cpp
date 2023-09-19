@@ -19,12 +19,9 @@ public:
         *maxi=max(*maxi,leftH+rightH);
         return max(leftH,rightH);
     }
-    
     int diameterOfBinaryTree(TreeNode* root) {
         int maxi=0;
         recur(root,&maxi);
         return maxi-2;
-        
-        
     }
 };
