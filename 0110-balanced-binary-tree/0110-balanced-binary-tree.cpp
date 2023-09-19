@@ -16,9 +16,7 @@ public:
         if(node==NULL) return 0;
         int leftH=recur(node->left);
         int rightH=recur(node->right);
-       
-        if(leftH==-1 || rightH==-1) return -1;
-        if(leftH-rightH>1 || leftH-rightH<-1) return -1;
+        if(leftH==-1 || rightH==-1 || leftH-rightH>1 || leftH-rightH<-1) return -1;
         return max(leftH,rightH)+1;
     }
     
