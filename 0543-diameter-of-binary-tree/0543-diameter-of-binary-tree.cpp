@@ -14,14 +14,14 @@ public:
     int recur(TreeNode *node, int *maxi)
     {
         if(node==NULL) return 0;
-        int leftH=1+recur(node->left, maxi);
-        int rightH=1+recur(node->right, maxi);
+        int leftH=recur(node->left, maxi);
+        int rightH=recur(node->right, maxi);
         *maxi=max(*maxi,leftH+rightH);
-        return max(leftH,rightH);
+        return max(leftH,rightH)+1;
     }
     int diameterOfBinaryTree(TreeNode* root) {
         int maxi=0;
         recur(root,&maxi);
-        return maxi-2;
+        return maxi;
     }
 };
