@@ -14,7 +14,6 @@ public:
     
     int recur(TreeNode *node,int &maxi)
     {
-        //if(node==NULL) return 0;
         int right=0;
         int left=0;
         if(node->right!=NULL )
