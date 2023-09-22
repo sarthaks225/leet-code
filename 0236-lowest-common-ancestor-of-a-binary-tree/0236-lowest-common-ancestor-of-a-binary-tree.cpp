@@ -14,12 +14,11 @@ public:
         if(node==NULL) return NULL;
         if(node->val==p->val) return p;
         if(node->val==q->val) return q;
-        TreeNode *a,*b;
-        a=recur(node->left, p, q);
-        b=recur(node->right, p, q);
-        if(a!=NULL && b!=NULL) return node;
-        if(a!=NULL) return a;
-        return b;        
+        TreeNode *a=recur(node->left, p, q);
+        TreeNode *b=recur(node->right, p, q);
+        if(a==NULL) return b;
+        if(b==NULL) return a;
+        return node;
     }
     
     TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
