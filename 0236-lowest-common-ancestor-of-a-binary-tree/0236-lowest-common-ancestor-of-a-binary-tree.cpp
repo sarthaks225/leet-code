@@ -12,8 +12,8 @@ public:
     TreeNode *recur(TreeNode *node,TreeNode *p, TreeNode *q)
     {
         if(node==NULL) return NULL;
-        if(node->val==p->val) return p;
-        if(node->val==q->val) return q;
+        if(node==p) return p;
+        if(node==q) return q;
         TreeNode *a=recur(node->left, p, q);
         TreeNode *b=recur(node->right, p, q);
         if(a==NULL) return b;
