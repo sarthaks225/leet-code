@@ -28,11 +28,9 @@ public:
             {
                 while(l--)
                 {
-                
                     ans.push_back(q.front()->val);
                     if(q.front()->right) q.push_back(q.front()->right);
                     if(q.front()->left) q.push_back(q.front()->left);
-
                     q.pop_front();
                 }
                 c=1;
@@ -40,12 +38,9 @@ public:
             {
                 while(l--)
                 {
-                
-                    ans.push_back(q.back()->val);
-                    
+                    ans.push_back(q.back()->val);   
                     if(q.back()->left) q.push_front(q.back()->left);
                     if(q.back()->right) q.push_front(q.back()->right);
-
                     q.pop_back();
                 }
                 c=0;
