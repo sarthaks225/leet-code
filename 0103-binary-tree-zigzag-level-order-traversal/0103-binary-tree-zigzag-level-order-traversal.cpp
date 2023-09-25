@@ -18,23 +18,13 @@ public:
         vector<vector<int>> result;
         deque<TreeNode *> q;
         q.push_front(root);
-        int l,c;
-        c=1;
+        int l;
+        bool flag=true;
         while(!q.empty())
         {
             l=q.size();
             vector<int> ans;
-            if(c==0)
-            {
-                while(l--)
-                {
-                    ans.push_back(q.front()->val);
-                    if(q.front()->right) q.push_back(q.front()->right);
-                    if(q.front()->left) q.push_back(q.front()->left);
-                    q.pop_front();
-                }
-                c=1;
-            }else
+            if(flag)
             {
                 while(l--)
                 {
@@ -43,8 +33,18 @@ public:
                     if(q.back()->right) q.push_front(q.back()->right);
                     q.pop_back();
                 }
-                c=0;
+               
+            }else
+            {
+                while(l--)
+                {
+                    ans.push_back(q.front()->val);
+                    if(q.front()->right) q.push_back(q.front()->right);
+                    if(q.front()->left) q.push_back(q.front()->left);
+                    q.pop_front();
+                }                
             }
+            flag=!flag;
             result.push_back(ans);
         }
         return result;
