@@ -18,23 +18,10 @@ public:
         if(node->left) left=recur(node->left,result);
         if(node->right) right=recur(node->right,result);
         int curr=node->val;
-        if((left>=0 || node->val>=0) && left+node->val>node->val)
-        {
-            curr+=left;
-        }
-        if((right>=0 || node->val>=0) && right+node->val>node->val)
-        {
-            curr+=right;
-        }
+        if((left>=0 || node->val>=0) && left+node->val>node->val) curr+=left;
+        if((right>=0 || node->val>=0) && right+node->val>node->val) curr+=right;
         if(result<curr) result=curr;
-        
-                return left>0?(right>0?(left>right?left+node->val:right+node->val):left+node->val):(right>0?right+node->val:node->val);
-            
-                
-        
-        //return (node->val+left)>(node->val+right)?node->val+left:node->val+right;
-        
-       //if(result<left+right+node->val) result=left+right+node->val;
+        return left>0?(right>0?(left>right?left+node->val:right+node->val):left+node->val):(right>0?right+node->val:node->val);
     }
     int maxPathSum(TreeNode* root) {
         int result=INT_MIN;
