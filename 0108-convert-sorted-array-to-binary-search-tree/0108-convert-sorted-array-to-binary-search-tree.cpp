@@ -14,18 +14,19 @@ public:
     
     void recur(int low,int high,TreeNode *root, vector<int> &nums)
     {
-        root->val=nums[(low+high)/2];
+        int mid=(low+high)/2;
+        root->val=nums[mid];
         if(low==high) return;
         
         TreeNode * node;
-        if((low+high)/2-1>=low) {
+        if(mid-1>=low) {
         node=new TreeNode();
         root->left=node;
-        recur(low,(low+high)/2-1, node, nums);
+        recur(low,mid-1, node, nums);
         }
         node=new TreeNode();
         root->right=node;
-        recur((low+high)/2+1,high,node,nums);
+        recur(mid+1,high,node,nums);
         
     }
     TreeNode* sortedArrayToBST(vector<int>& nums) {
