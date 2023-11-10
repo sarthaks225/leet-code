@@ -15,7 +15,7 @@ public:
     {
         if(!root->right) root->right=new TreeNode(val);
         else if(root->right->val > val) recur(root->right,val);
-        else if(root->right->val < val)
+        else //if(root->right->val < val)
         {
             TreeNode *node=new TreeNode(val);
             node->left=root->right;
