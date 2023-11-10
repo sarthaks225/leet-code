@@ -14,7 +14,6 @@ public:
     int rootFounder(vector<int> &nums, int start,int end)
     {
         int maxi,index;
-        int j=start;
         maxi=INT_MIN;
         index=start;
         for(vector<int>::iterator i=nums.begin()+start, e=nums.begin()+end; i<=e; ++i)
@@ -22,9 +21,9 @@ public:
             if(maxi<*i)
             {
                 maxi=*i;
-                index=j;
+                index=start;
             }
-            ++j;
+            ++start;
         }
         return index;
     }
