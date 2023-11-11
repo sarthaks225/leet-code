@@ -10,15 +10,19 @@
 
 class Solution {
 public:
-    TreeNode * recur(TreeNode *root, TreeNode *p, TreeNode *q)
-    {
-        if(root==NULL || root==p || root==q) return root;
-        if((root->val < p->val && root->val > q->val) || (root->val > p->val && root->val < q -> val) )return root;
-        if(root->val > p->val) return recur(root->left,p,q); //root->val > p->val && root->val > q->val
-        return recur(root->right,p,q);
-    }
+    
+       
     
     TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
-        return recur(root,p,q);
+        
+        while(root!=p && root!=q)
+        {
+        if((root->val < p->val && root->val > q->val) || (root->val > p->val && root->val < q -> val) )return root;
+        if(root->val > p->val) root=root->left;
+        else root=root->right;
     }
+            
+    return root;
+    }
+    
 };
