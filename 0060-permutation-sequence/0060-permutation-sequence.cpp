@@ -2,7 +2,7 @@ class Solution {
 public:
     void generateNext(string &num)
     {
-       string::reverse_iterator it1,it2;
+        string::reverse_iterator it1,it2;
         it2=num.rbegin();
         for(it1=it2+1; it1<num.rend(); it1++,it2++)
         {
@@ -22,9 +22,7 @@ public:
                 break;
             }
         }
-        
         reverse(num.rbegin(),it1);
-        
     }
     
     string getPermutation(int n, int k) {
