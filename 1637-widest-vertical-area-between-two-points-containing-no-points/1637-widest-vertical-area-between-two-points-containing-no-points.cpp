@@ -1,15 +1,17 @@
-bool ascending(vector<int> &i1, vector<int> &i2)
+/*bool ascending(vector<int> &i1, vector<int> &i2)
     {
         return (i1[0]<i2[0]);  
     }
+    */
 class Solution {
 public:
     
-    
+
            
     int maxWidthOfVerticalArea(vector<vector<int>>& points) {
-        sort(points.begin(),points.end(),ascending);
+        //sort(points.begin(),points.end(),ascending);
        // for(auto i: points) cout<<i[0]<<" ";
+        sort(points.begin(),points.end());
         int max=0;
         for(vector<vector<int>>::iterator i=points.begin()+1; i<points.end(); ++i)
         {
