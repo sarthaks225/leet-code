@@ -1,25 +1,30 @@
 class Solution {
 public:
     int minCost(string colors, vector<int>& neededTime) {
-        int curr=0;
+        vector<int>::iterator prevTime,currTime;
+        string::iterator prevColor,currColor;
+        
+        prevTime=neededTime.begin();
+        prevColor=colors.begin();
+        
         int result=0;
-        for(int i=1; i<neededTime.size(); ++i)
+        for(currTime=prevTime+1, currColor=prevColor+1; currTime<neededTime.end(); ++currColor,++currTime)
         {
-            if(colors[curr]==colors[i])
+            if(*prevColor==*currColor)
             {
-                if(neededTime[curr]<neededTime[i])
-                {
-                    result+=neededTime[curr];
-                    curr=i;
+                if(*currTime<*prevTime){
+                    result+=*currTime;
                 }
                 else{
-                    
-                    result+=neededTime[i];
+                    result+=*prevTime;
+                    prevTime=currTime;
+                    prevColor=currColor;
                 }
-                
             }
-            else curr=i;
-            
+            else{
+                prevTime=currTime;
+                prevColor=currColor;
+            }
         }
      return result;   
     }
