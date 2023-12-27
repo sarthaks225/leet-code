@@ -14,17 +14,14 @@ public:
             {
                 if(*currTime<*prevTime){
                     result+=*currTime;
+                    continue;
                 }
                 else{
                     result+=*prevTime;
-                    prevTime=currTime;
-                    prevColor=currColor;
                 }
             }
-            else{
                 prevTime=currTime;
                 prevColor=currColor;
-            }
         }
      return result;   
     }
