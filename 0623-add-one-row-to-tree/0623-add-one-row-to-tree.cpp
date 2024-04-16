@@ -19,26 +19,23 @@ public:
         node->right=rightNode;
         
     }
-    void recur(TreeNode *node, int val, int depth, int currDepth){
+    void recur(TreeNode *node, int val, int depth){
         if(!node) return;
-        ++currDepth;
-        if(depth == currDepth){
+        --depth;
+        if(depth == 1){
             add(node,val);
             return;
         }
-        recur(node->left,val,depth,currDepth);
-        recur(node->right,val,depth,currDepth);
+        recur(node->left,val,depth);
+        recur(node->right,val,depth);
     }
     TreeNode* addOneRow(TreeNode* root, int val, int depth) {
         if(depth==1){
             TreeNode *leftNode=new TreeNode(val, root, NULL);
             leftNode->left=root;
             root=leftNode;
-            
-           
-            
         }
-        else recur(root,val,depth,1);
+        else recur(root,val,depth);
         return root;
         
     }
