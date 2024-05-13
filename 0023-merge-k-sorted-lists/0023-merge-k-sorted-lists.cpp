@@ -21,7 +21,6 @@ public:
         
         priority_queue<int,vector<int>,Comparator> pq; // for min heap
         for(auto list : lists){
-            
             while(list!=NULL){
                 pq.push(list->val);
                 list=list->next;
@@ -32,11 +31,10 @@ public:
         if(pq.empty()) return NULL;
         
         ListNode *start=new ListNode();
-        start->val=pq.top();
-        pq.pop();
+        start->next=NULL;
         
-        ListNode *prev=start;
-        ListNode *node=start;
+        ListNode *prev,*node;
+        prev=start;
         while(!pq.empty()){
             node=new ListNode();
             node->val=pq.top();
@@ -46,6 +44,6 @@ public:
         }
         node->next=NULL;
         
-        return start;
+        return start->next;
     }
 };
