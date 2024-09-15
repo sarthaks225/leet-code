@@ -3,7 +3,7 @@ class Comparator
     public : 
     bool operator()(const pair<int,int> & a, const pair<int,int> & b)
     {
-        return a.second < b.second;
+        return a.second > b.second;
     }
 };
 
@@ -23,6 +23,7 @@ public:
         for(auto m : mp)
         {
             pq.push(pair<int,int>(m.first, m.second));
+            if(pq.size() > k) pq.pop();
         }
         
         while( k--)
