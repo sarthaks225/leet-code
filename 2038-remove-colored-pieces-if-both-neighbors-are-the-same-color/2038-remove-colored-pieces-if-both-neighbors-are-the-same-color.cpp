@@ -5,7 +5,6 @@ public:
         int bIndex = 0;
         int aCounter = 0;
         int bCounter =0;
-        bool result = false;
         
         while(true)
         {
@@ -18,8 +17,8 @@ public:
             }
             //cout<< "A : " << aCounter <<endl;
             if(aCounter != 3) return false;
-            aCounter = 1;
-            aIndex = i;
+            aCounter = 2;
+            aIndex = i+1;
             
          
             for( i=bIndex; i<colors.length(); ++i)
@@ -30,14 +29,11 @@ public:
             }
             //cout<< "B : " << bCounter <<endl;
             if(bCounter != 3) return true;
-            bCounter = 1;
-            bIndex = i;
-            
-           
+            bCounter = 2;
+            bIndex = i+1;
                 
         }
         
-        
-        return result;      
+        return false;      
     }
 };
