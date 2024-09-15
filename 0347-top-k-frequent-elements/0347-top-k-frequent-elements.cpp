@@ -13,10 +13,7 @@ public:
         vector<int> result;
         unordered_map <int, int> mp;
         
-        for( auto num : nums)
-        {
-            ++mp[num];
-        }
+        for( auto num : nums) ++mp[num];
         
         priority_queue<pair<int,int>, vector<pair<int,int>>, Comparator> pq;
         
@@ -26,15 +23,12 @@ public:
             if(pq.size() > k) pq.pop();
         }
         
-        while( k--)
+        while( !pq.empty())
         {
-            //cout<<pq.top().first<<" "<<pq.top().second<<endl;
             result.push_back(pq.top().first);
             pq.pop();
         }
-            
-        
-        
+
         return result;
     }
 };
