@@ -30,7 +30,6 @@ public:
                 {
                     result = min( result, abs(min1 - min2));
                 }
-                cout << min1 << " "<<min2<<endl;
             }
         }
         
