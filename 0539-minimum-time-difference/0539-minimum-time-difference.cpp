@@ -7,15 +7,10 @@ public:
         int min1=0;
         int min2=0;
         
-        // for(auto t : timePoints)
-        // {
-        //     cout<<t << endl;
-        // }
         for(int i=1; i<timePoints.size(); ++i)
         {
             if( timePoints[i-1] == timePoints[i] )
             {
-                cout<<"***"<<endl;
                 return 0;
             }
             else
