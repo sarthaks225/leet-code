@@ -8,18 +8,20 @@ public:
             ++mp[word];
         }
         
-        vector<string> result;
+        // vector<string> result;
         for( auto word  : arr)
         {
             if(mp[word] == 1)
             {
-                result.push_back(word);
+                // result.push_back(word);
+                k--;
             }
+            if(k==0) return word;
         }
         
-        if(result.size() < k) return "";
-        return result[k-1];
-        
+        // if(result.size() < k) return "";
+        // return result[k-1];
+        return "";
         
     }
 };
