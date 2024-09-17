@@ -11,11 +11,11 @@ public:
        
         if(min <= 99)
         {
-            cout<<"1)  ";
+            //cout<<"1)  ";
         
         counter = calculate(startAt, moveCost, pushCost, min, sec);
-        cout<<" "<<counter<<" ";
-        cout << min << ":"<<sec<<endl;
+        //cout<<" "<<counter<<" ";
+        //cout << min << ":"<<sec<<endl;
         result = result < counter ? result : counter;    
         }
         
@@ -29,8 +29,8 @@ public:
                         cout<<"2)  ";
             
             counter = calculate(startAt, moveCost, pushCost, min, sec);
-            cout<<" "<<counter<<" ";
-             cout << min << ":"<<sec<<endl;
+            //cout<<" "<<counter<<" ";
+             //cout << min << ":"<<sec<<endl;
             
             result = result < counter ? result : counter;
             
@@ -44,12 +44,12 @@ public:
         {
             min-=1;
             sec+=60;
-                        cout<<"3)  ";
+                       // cout<<"3)  ";
 
             
             counter=calculate(startAt, moveCost, pushCost, min,sec);
-             cout<<" "<<counter<<" ";
-             cout << min << ":"<<sec<<endl;
+             //cout<<" "<<counter<<" ";
+            // cout << min << ":"<<sec<<endl;
             result = result < counter ? result : counter;
         }
         return result;
