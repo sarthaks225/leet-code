@@ -20,12 +20,11 @@ public:
     string largestNumber(vector<int>& nums) {
         sort(nums.begin(), nums.end(), comparator);
         string result=  "";
-        cout<<"--------"<<endl;
+       
         for(auto num : nums)
         {
             if(result == "0" && num == 0) continue;
             result.append( to_string(num));
-            cout<<num<<" ";
         }
         return result;
     }
