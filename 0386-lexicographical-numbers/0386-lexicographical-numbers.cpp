@@ -22,34 +22,33 @@ public:
     //     return result;
     // }
     
-    vector<int> recur(int n, int max)
+    void recur(int n, int max, vector<int> &result)
     {
-        vector<int> result;
-        if(n>max) return result;
+        if(n>max) return ;
         result.push_back(n);
         
 
-            vector<int> end=recur(n*10, max);
+            //vector<int> end=recur(n*10, max);
+        recur(n*10, max, result);
 
-            for(auto num  : end)
-            {
-                result.push_back(num);
-            }
+//             for(auto num  : end)
+//             {
+//                 result.push_back(num);
+//             }
         
         
         for(int i=1; i<=9; ++i)
         {
             if(n*10 + i > max ) break;
-            vector<int> end=recur(n*10 + i, max);
+            //vector<int> end=recur(n*10 + i, max);
+            recur(n*10 + i, max, result);
 
-            for(auto num  : end)
-            {
-                result.push_back(num);
-            }
+            // for(auto num  : end)
+            // {
+            //     result.push_back(num);
+            // }
         }
     
-        return result;
-        
     }
     
      vector<int> lexicalOrder(int n) {
@@ -57,11 +56,12 @@ public:
         for(int i=1; i<=9; ++i)
         {
             
-            vector<int> end = recur(i, n);
-            for(auto num : end)
-            {
-                result.push_back(num);
-            }
+           // vector<int> end = recur(i, n, result);
+            recur(i, n, result);
+            // for(auto num : end)
+            // {
+            //     result.push_back(num);
+            // }
         }
         
          return result;
