@@ -4,8 +4,26 @@ public:
         
         vector<int> result;
         sort(nums.begin(),nums.end());
-        
-        for(int i=0; i<nums.size(); ++i)
+        int i=0;
+        int j=0;
+        for(i=0, j=nums.size()-1; i<j; )
+        {
+            if(nums[i]<target)
+            {
+                if( (i+j)/2 == i) {
+                    i=j;
+                    break;
+                }
+                i=(i+j)/2;  
+                
+            }
+            else{
+                j=i;
+                i=i/2;
+            }
+        }
+        if(nums[i] != target) return result;
+        for(; i<nums.size(); ++i)
         {
             if(nums[i] == target)
             {
