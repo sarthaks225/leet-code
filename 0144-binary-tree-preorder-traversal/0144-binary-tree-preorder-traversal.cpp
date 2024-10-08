@@ -11,6 +11,39 @@
  */
 class Solution {
 public:
+    
+    //iterative using stack
+    vector<int> preorderTraversal(TreeNode* root) {
+        if(root == NULL) return {};
+        vector<int> result;
+        
+        stack<TreeNode *> st;
+        while(root || !st.empty())
+        {
+            if(root) {
+                result.push_back(root->val);
+            }
+            else
+            {
+                root=st.top();
+                st.pop();
+                continue;
+            }
+            
+            if(root->right) st.push(root->right);
+             root=root->left;
+           
+        }
+        
+        return result;
+        
+        
+    }
+    
+
+    // recursion
+    
+    /*
     vector<int> preorderTraversal(TreeNode* root) {
         vector<int> result;
         recur(result,root);
@@ -24,4 +57,5 @@ public:
         recur(result,root->left);
         recur(result,root->right);
     }
+    */
 };
