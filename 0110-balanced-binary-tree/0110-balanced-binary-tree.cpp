@@ -10,19 +10,25 @@
  * };
  */
 class Solution {
-public:
-    int recur(TreeNode * node)
+    int recur(TreeNode * root)
     {
-        if(node==NULL) return 0;
-        int leftH=recur(node->left);
-        int rightH=recur(node->right);
-        if(leftH==-1 || rightH==-1 || leftH-rightH>1 || leftH-rightH<-1) return -1;
-        return max(leftH,rightH)+1;
+        if(root == NULL) return 0;
+        
+        int leftH = recur(root->left);
+        if(leftH == -1) return -1;
+        int rightH = recur(root->right);
+        if(rightH == -1) return -1;
+        if( abs(leftH - rightH) > 1) return -1;
+        
+        return 1 + max(leftH, rightH);
+        
     }
     
+public:
     bool isBalanced(TreeNode* root) {
-        int i=recur(root);
-        if(i==-1) return false;
+        
+        if(recur(root) == -1) return false;
         return true;
+        
     }
 };
