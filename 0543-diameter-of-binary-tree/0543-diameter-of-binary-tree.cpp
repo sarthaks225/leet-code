@@ -10,18 +10,23 @@
  * };
  */
 class Solution {
-public:
-    int recur(TreeNode *node, int *maxi)
+    private : 
+    int recur(TreeNode * root, int &maxi)
     {
-        if(node==NULL) return 0;
-        int leftH=recur(node->left, maxi);
-        int rightH=recur(node->right, maxi);
-        *maxi=max(*maxi,leftH+rightH);
-        return max(leftH,rightH)+1;
+        if(root == NULL) return 0;
+        int leftH = recur( root->left, maxi);
+        int rightH = recur( root->right, maxi);
+        
+        maxi = max(leftH + rightH , maxi);
+        return 1 + max( leftH , rightH);
     }
+    
+public:
     int diameterOfBinaryTree(TreeNode* root) {
-        int maxi=0;
-        recur(root,&maxi);
-        return maxi;
+        
+        int result=0;
+        recur(root, result);
+        return result;
+        
     }
 };
