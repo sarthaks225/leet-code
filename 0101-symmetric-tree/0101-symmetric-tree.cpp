@@ -10,17 +10,22 @@
  * };
  */
 class Solution {
-public:
-    bool recur(TreeNode *left, TreeNode *right)
-    {
-        if( ( left && !right ) || ( !left && right ) )   return false;
-        if(!left && !right) return true;
-        if(left->val!=right->val) return false;
-        if( !recur(left->left, right->right) || !recur(left->right, right->left) ) return false;
+    
+    bool recur(TreeNode *leftChild, TreeNode *rightChild){
+        if( !leftChild && !rightChild) return true;
+        if(leftChild && rightChild == NULL) return false;
+        if(leftChild == NULL && rightChild) return false;
+        if(leftChild->val != rightChild->val) return false;
+        if( recur(leftChild->right, rightChild->left) == false ) return false;
+        if( recur(leftChild->left, rightChild->right) == false) return false;
+        
         return true;
     }
     
+public:
     bool isSymmetric(TreeNode* root) {
+        //if(root->left == NULL || root->right == NULL) return true;
         return recur(root->left, root->right);
+        
     }
 };
